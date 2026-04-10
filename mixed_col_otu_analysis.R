@@ -12,7 +12,7 @@ library(purrr)
 
 #SET ENVIRONMENT#####################################################
 #Set working directory
-setwd("~/Desktop/mothur_mixed_colonization_analysis/otu_analysis/")
+setwd("FILL ME")
 #Set seed for all graphing
 set.seed(20220212)
 
