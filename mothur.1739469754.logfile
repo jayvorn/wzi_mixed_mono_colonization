@@ -1,0 +1,552 @@
+Mac version
+
+Using ReadLine,Boost,HDF5,GSL
+mothur v.1.48.0
+Last updated: 5/20/22
+by
+Patrick D. Schloss
+
+Department of Microbiology & Immunology
+
+University of Michigan
+http://www.mothur.org
+
+When using, please cite:
+Schloss, P.D., et al., Introducing mothur: Open-source, platform-independent, community-supported software for describing and comparing microbial communities. Appl Environ Microbiol, 2009. 75(23):7537-41.
+
+Distributed under the GNU General Public License
+
+Type 'help()' for information on the commands that are available
+
+For questions and analysis support, please visit our forum at https://forum.mothur.org
+
+Type 'quit()' to exit program
+
+[NOTE]: Setting random seed to 19760620.
+
+Batch Mode
+
+
+
+mothur > system(echo 'Hi Jay! I hope this goes well!')
+Hi Jay! I hope this goes well!
+
+
+mothur > set.seed(seed=20220212)
+Setting random seed to 20220212.
+
+Setting random seed to 20220212.
+
+
+mothur > set.dir(input=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing)
+Mothur's directories:
+[ERROR]: cannot access /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/
+
+mothur > set.dir(output=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing)
+Mothur's directories:
+outputDir=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/
+
+mothur > make.file(inputdir=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/reads,type=fastq,prefix=mixed_col)
+[ERROR]: cannot access /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/reads/
+[ERROR]: cannot access /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/reads/
+[ERROR]: did not complete make.file.
+
+mothur > get.mimarkspackage(file=mixed_col.files, package=miscellaneous)
+Unable to open mixed_col.files. Trying output directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.files.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.files. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.files.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.files. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.files.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.files.
+Unable to open mixed_col.files
+[ERROR]: You must provide file, groupfile or oligos file for the get.mimarkspackage command.
+[ERROR]: did not complete get.mimarkspackage.
+
+mothur > rename.file(input=mixed_col.tsv, new=mixed_col_mimarks_template.tsv)
+Unable to open mixed_col.tsv. Trying output directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.tsv.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.tsv. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.tsv.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.tsv. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.tsv.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.tsv.
+Unable to open mixed_col.tsv
+Ignoring: mixed_col.tsv
+
+Current files saved by mothur:
+processors=10
+
+mothur > system(echo 'LLLLEEEEETTTTSSSSS MAKE SOME CONTTTIIIIGGGGSSSSSS')
+LLLLEEEEETTTTSSSSS MAKE SOME CONTTTIIIIGGGGSSSSSS
+
+
+mothur > make.contigs(file=mixed_col.files, maxambig=0, maxlength=275, maxhomop=8)
+Unable to open mixed_col.files. Trying output directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.files.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.files. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.files.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.files. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.files.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.files.
+Unable to open mixed_col.files
+
+Using 10 processors.
+[ERROR]: did not complete make.contigs.
+
+mothur > summary.seqs(fasta=current, count=current)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+You have no current fasta, summary, contigsreport or alignreport file, one is required.
+
+Using 10 processors.
+[ERROR]: did not complete summary.seqs.
+
+mothur > unique.seqs(fasta=current, count=current)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+You have no current fastafile and the fasta parameter is required.
+[ERROR]: did not complete unique.seqs.
+
+mothur > system(echo 'Running quality control on sequences...')
+Running quality control on sequences...
+
+
+mothur > pcr.seqs(fasta=silva.seed_v132.align, start=11894, end=25319, keepdots=F, inputdir=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/silva.seed_v132)
+[ERROR]: cannot access /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/silva.seed_v132/
+Unable to open silva.seed_v132.align. Trying output directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/silva.seed_v132.align.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/silva.seed_v132.align. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.seed_v132.align.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.seed_v132.align. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.seed_v132.align.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.seed_v132.align.
+Unable to open silva.seed_v132.align
+
+Using 10 processors.
+[ERROR]: did not complete pcr.seqs.
+
+mothur > rename.file(input=silva.seed_v132.pcr.align, new=silva.v4.fasta)
+Unable to open silva.seed_v132.pcr.align. Trying output directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/silva.seed_v132.pcr.align.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/silva.seed_v132.pcr.align. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.seed_v132.pcr.align.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.seed_v132.pcr.align. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.seed_v132.pcr.align.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.seed_v132.pcr.align.
+Unable to open silva.seed_v132.pcr.align
+Ignoring: silva.seed_v132.pcr.align
+
+Current files saved by mothur:
+processors=10
+
+mothur > set.dir(input=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing)
+Mothur's directories:
+inputdir=
+	/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/
+
+
+mothur > align.seqs(fasta=mixed_col.trim.contigs.unique.fasta, reference=silva.v4.fasta)
+Unable to open silva.v4.fasta. Trying input directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/silva.v4.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/silva.v4.fasta. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.v4.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.v4.fasta. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.v4.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/silva.v4.fasta.
+Unable to open silva.v4.fasta
+Unable to open mixed_col.trim.contigs.unique.fasta. Trying input directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.trim.contigs.unique.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.trim.contigs.unique.fasta. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.fasta. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.fasta.
+Unable to open mixed_col.trim.contigs.unique.fasta
+
+Using 10 processors.
+[ERROR]: did not complete align.seqs.
+
+mothur > screen.seqs(fasta=current, count=current, start=1969, end=11551)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+You have no current fastafile and the fasta parameter is required.
+
+Using 10 processors.
+[ERROR]: did not complete screen.seqs.
+
+mothur > filter.seqs(fasta=current, vertical=T, trump=.)
+[WARNING]: no file was saved for fasta parameter.
+You have no current fastafile and the fasta parameter is required.
+
+Using 10 processors.
+[ERROR]: did not complete filter.seqs.
+
+mothur > unique.seqs(fasta=current, count=current)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+You have no current fastafile and the fasta parameter is required.
+[ERROR]: did not complete unique.seqs.
+
+mothur > pre.cluster(count=current, diffs=2)
+[WARNING]: no file was saved for count parameter.
+[ERROR]: You have no current fastafile and the fasta parameter is required.
+
+Using 10 processors.
+[ERROR]: did not complete pre.cluster.
+
+mothur > chimera.vsearch(count=current, count=current, dereplicate=t)
+[WARNING]: no file was saved for count parameter.
+[ERROR]: You have no current fasta file and the fasta parameter is required.
+[ERROR]: The reference parameter is a required, aborting.
+
+Using 10 processors.
+[ERROR]: did not complete chimera.vsearch.
+
+mothur > summary.seqs(fasta=current, count=current)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+You have no current fasta, summary, contigsreport or alignreport file, one is required.
+
+Using 10 processors.
+[ERROR]: did not complete summary.seqs.
+
+mothur > classify.seqs(fasta=current, count=current, reference=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/trainset18_062020.rdp/trainset18_062020.rdp.fasta, taxonomy=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/trainset18_062020.rdp/trainset18_062020.rdp.tax, cutoff=80)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+[ERROR]: You have no current fasta file and the fasta parameter is required.
+
+Using 10 processors.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/trainset18_062020.rdp/trainset18_062020.rdp.fasta. Trying input directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/trainset18_062020.rdp.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/trainset18_062020.rdp.fasta. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/trainset18_062020.rdp.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/trainset18_062020.rdp.fasta. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/trainset18_062020.rdp.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/trainset18_062020.rdp.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/trainset18_062020.rdp/trainset18_062020.rdp.fasta
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/trainset18_062020.rdp/trainset18_062020.rdp.tax. Trying input directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/trainset18_062020.rdp.tax.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/trainset18_062020.rdp.tax. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/trainset18_062020.rdp.tax.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/trainset18_062020.rdp.tax. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/trainset18_062020.rdp.tax.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/trainset18_062020.rdp.tax.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/trainset18_062020.rdp/trainset18_062020.rdp.tax
+[ERROR]: did not complete classify.seqs.
+
+mothur > remove.lineage(fasta=current, count=current, taxonomy=current, taxon=Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+[WARNING]: no file was saved for taxonomy parameter.
+You have no current taxonomy file and did not provide a constaxonomy file. The taxonomy or constaxonomy parameter is required.
+You must provide one of the following: fasta, name, group, count, alignreport, taxonomy, constaxonomy, shared or listfile.
+[ERROR]: did not complete remove.lineage.
+
+mothur > summary.seqs(fasta=current, count=current)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+You have no current fasta, summary, contigsreport or alignreport file, one is required.
+
+Using 10 processors.
+[ERROR]: did not complete summary.seqs.
+
+mothur > summary.tax(taxonomy=current, count=current)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for taxonomy parameter.
+You have no current taxonomy file and the taxonomy parameter is required.
+[ERROR]: did not complete summary.tax.
+
+mothur > system(echo 'Running error estimation...')
+Running error estimation...
+
+
+mothur > get.groups(count=current, fasta=current, groups=MockZymoPosB-MockZymoPosC-MockZymoPosD)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+[ERROR]: You have no current groupfile, designfile, countfile or sharedfile and one is required.
+[ERROR]: You must provide at least one of the following: fasta, name, taxonomy, group, shared, design, count, phylip, column or list.
+[ERROR]: did not complete get.groups.
+
+mothur > seq.error(fasta=current, count=current, reference=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/mock_community/zymo.mock_.16S_fasta.fasta, aligned=F)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+You have no current fasta file and the fasta parameter is required.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/mock_community/zymo.mock_.16S_fasta.fasta. Trying input directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/zymo.mock_.16S_fasta.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/zymo.mock_.16S_fasta.fasta. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/zymo.mock_.16S_fasta.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/zymo.mock_.16S_fasta.fasta. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/zymo.mock_.16S_fasta.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/zymo.mock_.16S_fasta.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/mock_community/zymo.mock_.16S_fasta.fasta
+[ERROR]: did not complete seq.error.
+
+mothur > dist.seqs(fasta=current, cutoff=0.03)
+[WARNING]: no file was saved for fasta parameter.
+You have no current fastafile and the fasta parameter is required.
+
+Using 10 processors.
+[ERROR]: did not complete dist.seqs.
+
+mothur > cluster(column=current, count=current)
+[WARNING]: no file was saved for column parameter.
+[WARNING]: no file was saved for count parameter.
+No valid current files. You must provide a phylip, column or fasta file before you can use the cluster command, unless using the unique method.
+[ERROR]: You must provide a distance file unless you are using the agc, dgc or unique clustering methods, aborting
+.
+Using 10 processors.
+[ERROR]: did not complete cluster.
+
+mothur > make.shared(list=current, count=current, label=0.03)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for list parameter.
+[ERROR]: No valid current files. You must provide a list, biom, shared or count file before you can use the make.shared command.
+[ERROR]: did not complete make.shared.
+
+mothur > rarefaction.single(shared=current)
+[WARNING]: no file was saved for shared parameter.
+No valid current files. You must provide a list, sabund, rabund or shared file before you can use the collect.single command.
+
+Using 10 processors.
+[ERROR]: did not complete rarefaction.single.
+
+mothur > get.current()
+
+Current RAM usage: 0.00872803 Gigabytes. Total Ram: 64 Gigabytes.
+
+Current files saved by mothur:
+processors=10
+
+Current input directories saved by mothur:
+	/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/
+
+
+Current default directories saved by mothur:
+	/Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/
+
+
+Current working directory: /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/
+
+Output File Names: 
+current_files.summary
+
+
+mothur > system(echo 'Preparing for ASV/OTU-based analysis...')
+Preparing for ASV/OTU-based analysis...
+
+
+mothur > set.dir(input=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing)
+Mothur's directories:
+inputdir=
+	/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/
+
+
+mothur > set.dir(output=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing)
+Mothur's directories:
+outputDir=/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/
+
+mothur > set.current(count=mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table)
+Unable to open mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table. Trying output directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table.
+Unable to open mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table
+Ignoring: mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table
+
+Using 10 processors.
+
+Current files saved by mothur:
+processors=10
+
+Output File Names: 
+/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/current_files.summary
+
+
+mothur > set.current(fasta=mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta)
+Unable to open mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta. Trying output directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta.
+Unable to open mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta
+Ignoring: mixed_col.trim.contigs.unique.good.filter.unique.precluster.denovo.vsearch.pick.fasta
+
+Using 10 processors.
+
+Current files saved by mothur:
+processors=10
+
+Output File Names: 
+/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/current_files.summary
+
+
+mothur > remove.groups(count=current, fasta=current, taxonomy=current, groups=MockZymoPosB-MockZymoPosC-MockZymoPosD)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+[WARNING]: no file was saved for taxonomy parameter.
+[ERROR]: You have no current groupfile, designfile, countfile or sharedfile and one is required.
+[ERROR]: You must provide at least one of the following: fasta, name, taxonomy, group, shared, design, count, phylip, column or list.
+[ERROR]: did not complete remove.groups.
+
+mothur > rename.file(fasta=current, count=current, taxonomy=current, prefix=final_mixed_col)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+[WARNING]: no file was saved for taxonomy parameter.
+
+Current files saved by mothur:
+processors=10
+
+mothur > summary.seqs(fasta=current, count=current)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+You have no current fasta, summary, contigsreport or alignreport file, one is required.
+
+Using 10 processors.
+[ERROR]: did not complete summary.seqs.
+
+mothur > make.shared(count=current)
+[WARNING]: no file was saved for count parameter.
+[ERROR]: No valid current files. You must provide a list, biom, shared or count file before you can use the make.shared command.
+[ERROR]: did not complete make.shared.
+
+mothur > classify.otu(list=current, count=current, taxonomy=current, label=ASV)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for list parameter.
+[WARNING]: no file was saved for taxonomy parameter.
+You have no current listfile and the list parameter is required.
+You have no current taxonomy file and the taxonomy parameter is required.
+[ERROR]: did not complete classify.otu.
+
+mothur > system(cp /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.ASV.shared raw_data)
+cp: /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.ASV.shared: No such file or directory
+
+
+mothur > dist.seqs(fasta=current, cutoff=0.03)
+[WARNING]: no file was saved for fasta parameter.
+You have no current fastafile and the fasta parameter is required.
+
+Using 10 processors.
+[ERROR]: did not complete dist.seqs.
+
+mothur > cluster(column=current, count=current)
+[WARNING]: no file was saved for column parameter.
+[WARNING]: no file was saved for count parameter.
+No valid current files. You must provide a phylip, column or fasta file before you can use the cluster command, unless using the unique method.
+[ERROR]: You must provide a distance file unless you are using the agc, dgc or unique clustering methods, aborting
+.
+Using 10 processors.
+[ERROR]: did not complete cluster.
+
+mothur > make.shared(list=current, count=current, label=0.03)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for list parameter.
+[ERROR]: No valid current files. You must provide a list, biom, shared or count file before you can use the make.shared command.
+[ERROR]: did not complete make.shared.
+
+mothur > classify.otu(list=current, count=current, taxonomy=current, label=0.03)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for list parameter.
+[WARNING]: no file was saved for taxonomy parameter.
+You have no current listfile and the list parameter is required.
+You have no current taxonomy file and the taxonomy parameter is required.
+[ERROR]: did not complete classify.otu.
+
+mothur > system(cp /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.opti_mcc.shared raw_data)
+cp: /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.opti_mcc.shared: No such file or directory
+
+
+mothur > system(cp /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.opti_mcc.0.03.cons.taxonomy raw_data)
+cp: /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.opti_mcc.0.03.cons.taxonomy: No such file or directory
+
+
+mothur > system(echo 'Getting representative sequences...')
+Getting representative sequences...
+
+
+mothur > dist.seqs(fasta=current, cutoff=0.10)
+[WARNING]: no file was saved for fasta parameter.
+You have no current fastafile and the fasta parameter is required.
+
+Using 10 processors.
+[ERROR]: did not complete dist.seqs.
+
+mothur > get.oturep(column=current, list=current, count=current, fasta=current)
+[WARNING]: no file was saved for column parameter.
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for fasta parameter.
+[WARNING]: no file was saved for list parameter.
+You have no current list file and the list parameter is required.
+No valid current files. You must provide a phylip or column file before you can use the get.oturep command.
+[ERROR]: did not complete get.oturep.
+
+mothur > system(cp /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.opti_mcc.0.03.rep.fasta raw_data)
+cp: /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.opti_mcc.0.03.rep.fasta: No such file or directory
+
+
+mothur > system(echo 'Preparing for phylotype-based analysis...')
+Preparing for phylotype-based analysis...
+
+
+mothur > set.current(count=final_mixed_col.count_table)
+Unable to open final_mixed_col.count_table. Trying output directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.count_table.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.count_table. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/final_mixed_col.count_table.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/final_mixed_col.count_table. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/final_mixed_col.count_table.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/final_mixed_col.count_table.
+Unable to open final_mixed_col.count_table
+Ignoring: final_mixed_col.count_table
+
+Using 10 processors.
+
+Current files saved by mothur:
+processors=10
+
+Output File Names: 
+/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/current_files.summary
+
+
+mothur > phylotype(taxonomy=current)
+[WARNING]: no file was saved for taxonomy parameter.
+No valid current files. taxonomy is a required parameter.
+[ERROR]: did not complete phylotype.
+
+mothur > make.shared(list=current, count=current, label=1)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for list parameter.
+[ERROR]: No valid current files. You must provide a list, biom, shared or count file before you can use the make.shared command.
+[ERROR]: did not complete make.shared.
+
+mothur > classify.otu(list=current, count=current, taxonomy=current, label=1)
+[WARNING]: no file was saved for count parameter.
+[WARNING]: no file was saved for list parameter.
+[WARNING]: no file was saved for taxonomy parameter.
+You have no current listfile and the list parameter is required.
+You have no current taxonomy file and the taxonomy parameter is required.
+[ERROR]: did not complete classify.otu.
+
+mothur > get.current()
+
+Current RAM usage: 0.00901413 Gigabytes. Total Ram: 64 Gigabytes.
+
+Current files saved by mothur:
+processors=10
+
+Current output directory saved by mothur: /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/
+
+Current default directories saved by mothur:
+	/Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/
+
+
+Current working directory: /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/
+
+Output File Names: 
+/Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/current_files.summary
+
+
+mothur > system(echo 'Counting groups...')
+Counting groups...
+
+
+mothur > count.groups(shared=final_mixed_col.opti_mcc.shared)
+Unable to open final_mixed_col.opti_mcc.shared. Trying output directory /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.opti_mcc.shared.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization/mothur/processing/final_mixed_col.opti_mcc.shared. Trying MOTHUR_FILES directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/final_mixed_col.opti_mcc.shared.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/final_mixed_col.opti_mcc.shared. Trying mothur's executable directory /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/final_mixed_col.opti_mcc.shared.
+Unable to open /Users/jayvornh/Desktop/mothur_mixed_colonization_analysis/mothur/final_mixed_col.opti_mcc.shared.
+Unable to open final_mixed_col.opti_mcc.shared
+You have no current groupfile, countfile or sharedfile and one is required.
+[ERROR]: did not complete count.groups.
+
+mothur > quit()
+
+
+It took 1 seconds to run 64 commands from mothur_processing_mixed.batch batch file.
+
+Logfile : mothur.1739469754.logfile
+
+
+
+************************************************************
+************************************************************
+************************************************************
+Detected 56 [ERROR] messages, please review.
+************************************************************
+************************************************************
+************************************************************
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Detected 63 [WARNING] messages, please review.
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
