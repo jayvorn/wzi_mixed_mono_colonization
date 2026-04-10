@@ -16,7 +16,9 @@ case_control_metadata.xlsx
 mixed_status.xlsx
 
 The raw analysis files are:
-
+final_mixed_col.opti_mcc.0.03.cons.taxonomy
+final_mixed_col.opti_mcc.count.summary
+final_mixed_col.opti_mcc.shared
 
 NOTE: These files are direct outputs from mothur. All file generation can be replicated by re-running the batch files above with raw read files from PRJNA1439784. 
 
